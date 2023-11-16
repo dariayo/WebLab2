@@ -8,3 +8,5 @@ function svgPoint(event) {
         sendServer(x, y, r);
     }
 }
+
+

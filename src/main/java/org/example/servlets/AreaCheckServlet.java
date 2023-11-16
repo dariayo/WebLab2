@@ -1,13 +1,11 @@
-package com.dariayo.webLab2.servlets;
+package org.example.servlets;
 
-import com.dariayo.webLab2.model.Point;
-import com.dariayo.webLab2.model.PointCollection;
+import org.example.model.Point;
+import org.example.model.PointCollection;
 
-import javax.servlet.annotation.WebServlet;
-import javax.servlet.http.HttpServlet;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
+
+import jakarta.servlet.http.*;
+import jakarta.servlet.annotation.*;
 
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -16,7 +14,7 @@ import java.time.format.DateTimeFormatter;
 
 import static java.time.temporal.ChronoUnit.MINUTES;
 
-@WebServlet(name = "area-check-servlet", value = "/area-check-servlet")
+@WebServlet("/area-check-servlet")
 public class AreaCheckServlet extends HttpServlet {
     @Override
     public void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {

@@ -1,3 +1,5 @@
+
+
 const checkInput = function () {
     if (checkX(getX()) && checkY(getY()) && checkR(getR())) {
         let x = getX();
@@ -18,7 +20,8 @@ function sendServer(x, y, r) {
             "timezone": new Date().getTimezoneOffset()
         },
         success: function () {
-            window.location.replace('result.jsp');
+            location.reload();
         }
     });
+
 }

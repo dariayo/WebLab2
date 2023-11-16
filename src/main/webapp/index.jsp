@@ -1,4 +1,4 @@
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib uri="jakarta.tags.core"  prefix="c" %>
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <!DOCTYPE HTML>
 <html lang="en">
@@ -14,7 +14,14 @@
 </head>
 
 <body background="image/wallpaper.avif">
-<script type="module" src="js/jquery-3.7.1.js"></script>
+<%--<script type="module" src="js/jquery-3.7.1.js"></script>--%>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<script src="./node_modules/react/umd/react.development.js"></script>
+<script src="./node_modules/react-dom/umd/react-dom.development.js"></script>
+<script src='https://cdn.jsdelivr.net/npm/gsap@3.12/dist/gsap.min.js'></script>
+<script type="module" src="
+https://cdn.jsdelivr.net/npm/@codingscape/react-hot-toast@1.0.3/+esm
+"></script>
 <header class="header">
     <div>
         Shevchenko Daria P3230
@@ -68,12 +75,13 @@
 
             <path class="svg-figure circle"
                   d="M175,220 Q180,160 250,145 L 250 220 Z"></path>
-            <%--@elvariable id="dots" type="com.dariayo.webLab2.model.PointCollection"--%>
+            <%--@elvariable id="dots" type="org.example.model.PointCollection"--%>
             <c:forEach items="${dots.collection}" var="col">
                 <circle class="point" cx="${250 + 150/col.r * col.x}"
                         cy="${220 - 150/col.r * col.y}" r="4"
                         fill="#000000" stroke-width="0"></circle>
             </c:forEach>
+
         </svg>
 
     </div>
@@ -98,30 +106,31 @@
         <div class="y-first">
             <input type="text" id="y" name="y" style="display: none;" value="-5">
             <% for (int i = -5; i <= -3; i++) { %>
-            <input class="y-button" type="button" name="y" value="<%=i%>" id="b_<%=i%>"
+            <input class="y-button" type="button" name="y" value="<%=i%>"
                    onclick="chooseButton(this,'y-button')">
             <%}%>
         </div>
         <div class="y-sec">
             <% for (int i = -2; i <= 0; i++) { %>
-            <input class="y-button" type="button" name="y" value="<%=i%>" id="b_<%=i%>"
+            <input class="y-button" type="button" name="y" value="<%=i%>"
                    onclick="chooseButton(this,'y-button')">
             <%}%>
         </div>
         <div class="y-third">
             <% for (int i = 1; i <= 3; i++) { %>
-            <input class="y-button" type="button" name="y" value="<%=i%>" id="b_<%=i%>"
+            <input class="y-button" type="button" name="y" value="<%=i%>"
                    onclick="chooseButton(this,'y-button')">
             <%}%>
         </div>
         <div class="buttons">
             <button class="send-button" type="submit" id="submitButton">Submit</button>
-            <button class="clear-button" type="button" id="clearButton" onclick='clearTable()'>Clear</button>
+            <button class="clear-button" type="button" id="clearButton" onclick={clearTable()}>Clear</button>
         </div>
 
     </div>
 </form>
 <span class="error" id="error"> </span>
+
 
 <div class="table-form" id="answer">
 
@@ -136,7 +145,7 @@
             </th>
             <th class="header__item"><a id="runtime-table" class="space">Runtime</a></th>
         </tr>
-        <%--@elvariable id="dots" type="com.dariayo.webLab2.model.PointCollection"--%>
+        <%--@elvariable id="dots" type="org.example.model.PointCollection"--%>
         <c:forEach items="${dots.collection}" var="col">
             <tr class="table-content">
             <tr class="table-row">
@@ -150,10 +159,21 @@
         </c:forEach>
     </table>
 </div>
-<script src="js/validator.js"></script>
-<script src="js/updater.js"></script>
+<script type="module" src= 'https://cdn.jsdelivr.net/npm/react-dom@18.2.0/+esm'> </script>
+<!-- Note: when deploying, replace "development.js" with "production.min.js". -->
+<script src="https://unpkg.com/react@18/umd/react.production.min.js" crossorigin></script>
+<script src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js" crossorigin></script>
+<div id="like_button_container"></div>
+
+<script type="module" src="js/like.js"></script>
+
+
+<script  src="js/validate.js"></script>
+<script  src="js/sendServer.js"></script>
 <script src="js/clearTable.js"></script>
-<script src="js/graphHandler.js"></script>
+<script src="js/graph.js"></script>
+
+
 </body>
 
 </html>

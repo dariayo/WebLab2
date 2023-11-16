@@ -4,45 +4,152 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>com.dariayo</groupId>
-    <artifactId>web-lab2</artifactId>
+    <groupId>org.example</groupId>
+    <artifactId>web-lab</artifactId>
     <version>1.0-SNAPSHOT</version>
-    <name>web-lab2</name>
     <packaging>war</packaging>
 
     <properties>
-        <maven.compiler.source>17</maven.compiler.source>
-        <maven.compiler.target>17</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <junit.version>5.9.0</junit.version>
+        <maven.compiler.target>11</maven.compiler.target>
+        <maven.compiler.source>11</maven.compiler.source>
+        <junit.version>5.9.2</junit.version>
     </properties>
+
     <dependencies>
         <dependency>
-            <groupId>javax</groupId>
-            <artifactId>javaee-web-api</artifactId>
-            <version>7.0</version>
-            <scope>provided</scope>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter-api</artifactId>
+            <version>${junit.version}</version>
+            <scope>test</scope>
         </dependency>
+
         <dependency>
-            <groupId>jstl</groupId>
-            <artifactId>jstl</artifactId>
-            <version>1.2</version>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter-engine</artifactId>
+            <version>${junit.version}</version>
+            <scope>test</scope>
         </dependency>
+
         <dependency>
-            <groupId>javax.servlet</groupId>
-            <artifactId>javax.servlet-api</artifactId>
-            <version>4.0.1</version>
+            <groupId>jakarta.servlet.jsp.jstl</groupId>
+            <artifactId>jakarta.servlet.jsp.jstl-api</artifactId>
+            <version>3.0.0</version>
         </dependency>
+
         <dependency>
-            <groupId>javax.servlet.jsp</groupId>
-            <artifactId>jsp-api</artifactId>
-            <version>2.2</version>
+            <groupId>org.glassfish.web</groupId>
+            <artifactId>jakarta.servlet.jsp.jstl</artifactId>
+            <version>3.0.1</version>
         </dependency>
+<!--        <dependency>-->
+<!--            <groupId>jakarta.servlet</groupId>-->
+<!--            <artifactId>jakarta.servlet-api</artifactId>-->
+<!--            <version>5.0.0</version>-->
+<!--            <scope>provided</scope>-->
+<!--        </dependency>-->
+<!--        <dependency>-->
+<!--            <groupId>org.apache.maven.plugins</groupId>-->
+<!--            <artifactId>maven-war-plugin</artifactId>-->
+<!--            <version>3.2.0</version>-->
+<!--            <type>maven-plugin</type>-->
+<!--        </dependency>-->
+<!--        <dependency>-->
+<!--            <groupId>jakarta.servlet.jsp.jstl</groupId>-->
+<!--            <artifactId>jakarta.servlet.jsp.jstl-api</artifactId>-->
+<!--            <version>2.0.0</version>-->
+<!--        </dependency>-->
+<!--        &lt;!&ndash; https://mvnrepository.com/artifact/jakarta.platform/jakarta.jakartaee-web-api &ndash;&gt;-->
+<!--        <dependency>-->
+<!--            <groupId>jakarta.platform</groupId>-->
+<!--            <artifactId>jakarta.jakartaee-web-api</artifactId>-->
+<!--            <version>10.0.0</version>-->
+<!--            <scope>provided</scope>-->
+<!--        </dependency>-->
+
+<!--        &lt;!&ndash;        <dependency>&ndash;&gt;-->
+<!--        &lt;!&ndash;            <groupId>javax</groupId>&ndash;&gt;-->
+<!--        &lt;!&ndash;            <artifactId>javaee-web-api</artifactId>&ndash;&gt;-->
+<!--        &lt;!&ndash;            <version>7.0</version>&ndash;&gt;-->
+<!--        &lt;!&ndash;            <scope>provided</scope>&ndash;&gt;-->
+<!--        &lt;!&ndash;        </dependency>&ndash;&gt;-->
+<!--        <dependency>-->
+<!--            <groupId>jstl</groupId>-->
+<!--            <artifactId>jstl</artifactId>-->
+<!--            <version>1.2</version>-->
+<!--        </dependency>-->
+<!--        <dependency>-->
+<!--            <groupId>jakarta.servlet</groupId>-->
+<!--            <artifactId>jakarta.servlet-api</artifactId>-->
+<!--            <version>6.0.0</version>-->
+<!--        </dependency>-->
+<!--        &lt;!&ndash; https://mvnrepository.com/artifact/jakarta.servlet/jakarta.servlet-api &ndash;&gt;-->
+<!--        <dependency>-->
+<!--            <groupId>jakarta.servlet</groupId>-->
+<!--            <artifactId>jakarta.servlet-api</artifactId>-->
+<!--            <version>6.0.0</version>-->
+<!--            <scope>provided</scope>-->
+<!--        </dependency>-->
+<!--        &lt;!&ndash; https://mvnrepository.com/artifact/jakarta.servlet.jsp/jakarta.servlet.jsp-api &ndash;&gt;-->
+<!--        <dependency>-->
+<!--            <groupId>jakarta.servlet.jsp</groupId>-->
+<!--            <artifactId>jakarta.servlet.jsp-api</artifactId>-->
+<!--            <version>3.1.1</version>-->
+<!--            <scope>provided</scope>-->
+<!--        </dependency>-->
+<!--        &lt;!&ndash; https://mvnrepository.com/artifact/org.glassfish.web/jakarta.servlet.jsp.jstl &ndash;&gt;-->
+<!--        <dependency>-->
+<!--            <groupId>org.glassfish.web</groupId>-->
+<!--            <artifactId>jakarta.servlet.jsp.jstl</artifactId>-->
+<!--            <version>3.0.1</version>-->
+<!--        </dependency>-->
+
+
+        <!--        <dependency>-->
+        <!--            <groupId>javax.servlet</groupId>-->
+        <!--            <artifactId>javax.servlet-api</artifactId>-->
+        <!--            <version>4.0.1</version>-->
+        <!--        </dependency>-->
+        <!--        <dependency>-->
+        <!--            <groupId>javax.servlet.jsp</groupId>-->
+        <!--            <artifactId>jsp-api</artifactId>-->
+        <!--            <version>2.2</version>-->
+        <!--        </dependency>-->
+        <!--        <dependency>-->
+        <!--            <groupId>javax.servlet</groupId>-->
+        <!--            <artifactId>jstl</artifactId>-->
+        <!--            <version>1.2</version>-->
+        <!--        </dependency>-->
         <dependency>
             <groupId>net.sourceforge.htmlunit</groupId>
             <artifactId>htmlunit</artifactId>
             <version>2.60.0</version>
         </dependency>
+<!--         https://mvnrepository.com/artifact/org.webjars.npm/react-->
+                <dependency>
+                    <groupId>org.webjars.npm</groupId>
+                    <artifactId>react</artifactId>
+                    <version>18.2.0</version>
+                </dependency>
+
+                <dependency>
+                    <groupId>org.webjars.npm</groupId>
+                    <artifactId>react-dom</artifactId>
+                    <version>18.2.0</version>
+                </dependency>
     </dependencies>
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-war-plugin</artifactId>
+                <version>3.3.2</version>
+            </plugin>
+
+        </plugins>
+    </build>
 
 </project>
+
+
+
