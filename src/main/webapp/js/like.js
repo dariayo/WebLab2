@@ -1,16 +1,37 @@
-'use strict';
+class LikeButton extends React.Component {
+    constructor(props) {
+        super(props);
+        this.state = {liked: false};
+    }
 
-function LikeButton() {
+    render() {
+        if (this.state.liked) {
+            function tick() {
+                const element = React.createElement(
+                    'button',
+                    {
+                        id: 'but',
+                    },
+                    `Time, ${new Date().toLocaleTimeString()}`,
+                )
+                ReactDOM.render(element, document.getElementById("root"));
+            }
 
-    return React.createElement(
-        'button',
-        {
-            onClick: () => checkInput(),
-        },
-        'Like'
-    );
+            setInterval(tick, 1000);
+        } else {
+            const element = React.createElement(
+                'button',
+                {
+                    id: 'but',
+                    onClick: () => this.setState({liked: true}),
+                },
+                'Show time'
+            );
+            ReactDOM.render(element, document.getElementById("root"));
+        }
+    }
 }
 
-const domContainer = document.querySelector('#like_button_container');
+const domContainer = document.querySelector('#root');
 const root = ReactDOM.createRoot(domContainer);
 root.render(React.createElement(LikeButton));
