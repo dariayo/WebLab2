@@ -1,4 +1,4 @@
-<%@ taglib uri="jakarta.tags.core"  prefix="c" %>
+<%@ taglib uri="jakarta.tags.core" prefix="c" %>
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <!DOCTYPE HTML>
 <html lang="en">
@@ -14,19 +14,12 @@
 </head>
 
 <body background="image/wallpaper.avif">
-<%--<script type="module" src="js/jquery-3.7.1.js"></script>--%>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-<script src="./node_modules/react/umd/react.development.js"></script>
-<script src="./node_modules/react-dom/umd/react-dom.development.js"></script>
-<script src='https://cdn.jsdelivr.net/npm/gsap@3.12/dist/gsap.min.js'></script>
-<script type="module" src="
-https://cdn.jsdelivr.net/npm/@codingscape/react-hot-toast@1.0.3/+esm
-"></script>
 <header class="header">
     <div>
         Shevchenko Daria P3230
         <br>
-        Var 1117
+        Var 96318
     </div>
 </header>
 
@@ -88,7 +81,7 @@ https://cdn.jsdelivr.net/npm/@codingscape/react-hot-toast@1.0.3/+esm
 
 
 </div>
-<form class="data-send-form" id="form" onsubmit="checkInput(); return false;">
+<form class="data-send-form" id="form" onsubmit="checkInput();">
     <div class="r-values">
         <label for="r_select">
             <a>R:</a>
@@ -157,19 +150,20 @@ https://cdn.jsdelivr.net/npm/@codingscape/react-hot-toast@1.0.3/+esm
                 <td class="table-data">${col.runtime.toString()}</td>
             </tr>
         </c:forEach>
+
     </table>
+
 </div>
-<script type="module" src= 'https://cdn.jsdelivr.net/npm/react-dom@18.2.0/+esm'> </script>
-<!-- Note: when deploying, replace "development.js" with "production.min.js". -->
+
 <script src="https://unpkg.com/react@18/umd/react.production.min.js" crossorigin></script>
 <script src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js" crossorigin></script>
-<div id="like_button_container"></div>
+<div id="root"></div>
 
 <script type="module" src="js/like.js"></script>
 
 
-<script  src="js/validate.js"></script>
-<script  src="js/sendServer.js"></script>
+<script src="js/validate.js"></script>
+<script src="js/sendServer.js"></script>
 <script src="js/clearTable.js"></script>
 <script src="js/graph.js"></script>
 

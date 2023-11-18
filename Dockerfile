@@ -4,4 +4,5 @@ LABEL maintainer="satheeskumar.pmp@gmail.com"
 ADD target/web-lab-1.0-SNAPSHOT.war /usr/local/tomcat/webapps/
 
 EXPOSE 8080
+
 CMD ["catalina.sh", "run"]

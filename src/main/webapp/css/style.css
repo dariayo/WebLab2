@@ -25,6 +25,7 @@ body {
 .group {
     color: black;
     display: flex;
+    flex-direction: row;
     font-family: serif;
     font-size: 1.26rem;
     left: 600px;
@@ -32,7 +33,6 @@ body {
     position: fixed;
     top: 160px;
     width: 200px;
-    flex-direction: row;
 }
 
 .header {
@@ -53,6 +53,7 @@ svg {
 }
 
 .svg-graphic {
+    border-radius: 10px;
     background-color: lightslategray;
     margin: 2%;
 
@@ -68,7 +69,7 @@ svg {
     top: 330px;
 }
 
-.send-button {
+.send-button{
     background-color: pink;
     border: 2px solid lightslategray;
     border-radius: 4px;
@@ -111,7 +112,26 @@ svg {
     box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0 rgba(0, 0, 0, 0.2);
     color: white;
 }
-
+#but{
+    background-color: pink;
+    border: 2px solid lightslategray;
+    border-radius: 4px;
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    height: 60px;
+    left: 1160px;
+    margin: 5px;
+    padding: 14px 40px;
+    position: fixed;
+    top: -1px;
+    transition-duration: 0.4s;
+    text-align: center;
+    width: 150px;
+}
+#but:hover{
+    background-color: palevioletred;
+    color: white;
+}
 .table {
     border: 1px solid black;
     border-collapse: collapse;
@@ -270,14 +290,14 @@ div > a {
     color: white;
 }
 .text {
-    font-weight: 600;
     font-size: 8em;
+    font-weight: 600;
     will-change: opacity;
 }
 
 .container {
-    display: flex;
     align-items: center;
+    display: flex;
     height: 100%;
     justify-content: center;
 }

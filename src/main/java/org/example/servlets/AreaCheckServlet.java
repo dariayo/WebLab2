@@ -10,9 +10,9 @@ import jakarta.servlet.annotation.*;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.time.LocalDateTime;
+import java.time.ZoneId;
 import java.time.format.DateTimeFormatter;
 
-import static java.time.temporal.ChronoUnit.MINUTES;
 
 @WebServlet("/area-check-servlet")
 public class AreaCheckServlet extends HttpServlet {
@@ -29,9 +29,8 @@ public class AreaCheckServlet extends HttpServlet {
 
         String status = hit(x, y, r);
 
-        int timezone = Integer.parseInt(request.getParameter("timezone"));
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("HH:mm:ss");
-        String currentTime = formatter.format(LocalDateTime.now().plus(timezone, MINUTES));
+        String currentTime = formatter.format(LocalDateTime.now(ZoneId.of("Europe/Moscow")));
         long runtime = (long) ((System.nanoTime() - timer) * 0.00001);
 
         Object collection = session.getAttribute("dots");

@@ -1,4 +1,3 @@
-
 let Y;
 
 function showError() {
@@ -6,11 +5,13 @@ function showError() {
     showErr.innerHTML = '';
     showErr.classList.remove("show");
 }
- function addError(message) {
+
+function addError(message) {
     let showErr = document.querySelector('.error');
     showErr.innerHTML += message + "<br>";
     showErr.classList.add("show");
 }
+
 function getX() {
 
     return parseFloat(document.getElementById("x-value-select").value);
@@ -20,9 +21,10 @@ function getY() {
     return parseFloat(Y);
 }
 
- function getR() {
+function getR() {
     return parseFloat(document.getElementById("r_select").value);
 }
+
 function chooseButton(element, className) {
     if (className === 'y-button') {
         Y = element.value;
@@ -39,7 +41,7 @@ function chooseButton(element, className) {
 
 }
 
- function checkX(x) {
+function checkX(x) {
     showError();
     let err = '';
     let xCorr = false;
@@ -51,8 +53,7 @@ function chooseButton(element, className) {
             err = "X should be (-5..5)!";
 
         }
-    }
-    else err = "Enter X!";
+    } else err = "Enter X!";
 
     addError(err);
     return xCorr;
